@@ -1,0 +1,95 @@
+{
+  "app": {
+    "title": "BudgetAssist",
+    "subtitle": "Управление личным бюджетом"
+  },
+  "skipLinks": {
+    "ariaLabel": "Быстрая навигация",
+    "mainContent": "Перейти к основному содержанию",
+    "navigation": "Перейти к навигации",
+    "footer": "Перейти к футеру"
+  },
+  "navigation": {
+    "home": "Главная",
+    "transactions": "Транзакции",
+    "budget": "Бюджет",
+    "documents": "Документы",
+    "reports": "Отчеты",
+    "assistance": "Помощь",
+    "settings": "Настройки"
+  },
+  "dashboard": {
+    "client": {
+      "ariaLabel": "Главная панель",
+      "welcome": "Добро пожаловать!",
+      "currentBalance": "Текущий баланс",
+      "budgetUsage": "Использовано бюджета: {{percent}}%",
+      "budgetUsageAriaLabel": "{{percent}} процентов бюджета использовано",
+      "monthlyBudget": "Из {{amount}} € месячного бюджета",
+      "upcomingPayments": "Предстоящие платежи",
+      "noUpcomingPayments": "Нет предстоящих платежей",
+      "recentTransactions": "Последние транзакции",
+      "noTransactions": "Пока нет транзакций"
+    }
+  },
+  "categories": {
+    "income_sozialamt": "Социальное пособие",
+    "income_pension": "Пенсия",
+    "income_disability_benefit": "Пособие по инвалидности",
+    "income_work": "Доход от работы",
+    "income_other": "Прочие доходы",
+    "expense_housing": "Жилье/Аренда",
+    "expense_food": "Продукты",
+    "expense_transport": "Транспорт",
+    "expense_health": "Здоровье",
+    "expense_utilities": "Коммунальные услуги",
+    "expense_insurance": "Страхование",
+    "expense_clothing": "Одежда",
+    "expense_personal_care": "Личная гигиена",
+    "expense_communication": "Связь",
+    "expense_recreation": "Отдых",
+    "expense_other": "Прочее"
+  },
+  "transactions": {
+    "add": "Добавить транзакцию",
+    "addIncome": "Добавить доход",
+    "addExpense": "Добавить расход",
+    "amount": "Сумма",
+    "category": "Категория",
+    "date": "Дата",
+    "description": "Описание",
+    "optional": "необязательно",
+    "attachReceipt": "Прикрепить чек",
+    "addFile": "Добавить файл",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "required": "Обязательное поле",
+    "sozialamtRelevant": "Важно для социальной службы"
+  },
+  "accessibility": {
+    "settings": "Настройки доступности",
+    "highContrast": "Высокая контрастность",
+    "largeText": "Крупный текст",
+    "screenReader": "Оптимизировано для screen reader",
+    "reducedMotion": "Уменьшенная анимация",
+    "simpleMode": "Упрощенный режим",
+    "voiceControl": "Голосовое управление",
+    "colorScheme": "Цветовая схема",
+    "light": "Светлая",
+    "dark": "Темная",
+    "highContrastMode": "Высокая контрастность",
+    "fontSize": "Размер шрифта"
+  },
+  "common": {
+    "close": "Закрыть",
+    "open": "Открыть",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "confirm": "Подтвердить",
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успешно",
+    "warning": "Предупреждение",
+    "info": "Информация"
+  }
+}

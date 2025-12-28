@@ -1,0 +1,95 @@
+{
+  "app": {
+    "title": "BudgetAssist",
+    "subtitle": "Persönliches Budgetmanagement"
+  },
+  "skipLinks": {
+    "ariaLabel": "Schnellnavigation",
+    "mainContent": "Zum Hauptinhalt springen",
+    "navigation": "Zur Navigation springen",
+    "footer": "Zum Footer springen"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "transactions": "Transaktionen",
+    "budget": "Budget",
+    "documents": "Dokumente",
+    "reports": "Berichte",
+    "assistance": "Unterstützung",
+    "settings": "Einstellungen"
+  },
+  "dashboard": {
+    "client": {
+      "ariaLabel": "Hauptdashboard",
+      "welcome": "Willkommen zurück!",
+      "currentBalance": "Aktueller Saldo",
+      "budgetUsage": "Budget verbraucht: {{percent}}%",
+      "budgetUsageAriaLabel": "{{percent}} Prozent des Budgets verbraucht",
+      "monthlyBudget": "Aus {{amount}} € monatlichem Budget",
+      "upcomingPayments": "Anstehende Zahlungen",
+      "noUpcomingPayments": "Keine anstehenden Zahlungen",
+      "recentTransactions": "Letzte Transaktionen",
+      "noTransactions": "Noch keine Transaktionen"
+    }
+  },
+  "categories": {
+    "income_sozialamt": "Sozialamt Leistungen",
+    "income_pension": "Rente",
+    "income_disability_benefit": "Behindertenbeihilfe",
+    "income_work": "Arbeitseinkommen",
+    "income_other": "Sonstige Einnahmen",
+    "expense_housing": "Wohnung/Miete",
+    "expense_food": "Lebensmittel",
+    "expense_transport": "Transport",
+    "expense_health": "Gesundheit",
+    "expense_utilities": "Nebenkosten",
+    "expense_insurance": "Versicherung",
+    "expense_clothing": "Kleidung",
+    "expense_personal_care": "Körperpflege",
+    "expense_communication": "Kommunikation",
+    "expense_recreation": "Freizeit",
+    "expense_other": "Sonstiges"
+  },
+  "transactions": {
+    "add": "Transaktion hinzufügen",
+    "addIncome": "Einnahme hinzufügen",
+    "addExpense": "Ausgabe hinzufügen",
+    "amount": "Betrag",
+    "category": "Kategorie",
+    "date": "Datum",
+    "description": "Beschreibung",
+    "optional": "optional",
+    "attachReceipt": "Beleg anhängen",
+    "addFile": "Datei hinzufügen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "required": "Pflichtfeld",
+    "sozialamtRelevant": "Für Sozialamt relevant"
+  },
+  "accessibility": {
+    "settings": "Barrierefreiheit-Einstellungen",
+    "highContrast": "Hoher Kontrast",
+    "largeText": "Großer Text",
+    "screenReader": "Screen Reader optimiert",
+    "reducedMotion": "Reduzierte Bewegung",
+    "simpleMode": "Vereinfachte Ansicht",
+    "voiceControl": "Sprachsteuerung",
+    "colorScheme": "Farbschema",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "highContrastMode": "Hoher Kontrast",
+    "fontSize": "Schriftgröße"
+  },
+  "common": {
+    "close": "Schließen",
+    "open": "Öffnen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "confirm": "Bestätigen",
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Erfolgreich",
+    "warning": "Warnung",
+    "info": "Information"
+  }
+}

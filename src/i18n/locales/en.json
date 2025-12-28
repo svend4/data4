@@ -1,0 +1,95 @@
+{
+  "app": {
+    "title": "BudgetAssist",
+    "subtitle": "Personal Budget Management"
+  },
+  "skipLinks": {
+    "ariaLabel": "Quick navigation",
+    "mainContent": "Skip to main content",
+    "navigation": "Skip to navigation",
+    "footer": "Skip to footer"
+  },
+  "navigation": {
+    "home": "Home",
+    "transactions": "Transactions",
+    "budget": "Budget",
+    "documents": "Documents",
+    "reports": "Reports",
+    "assistance": "Assistance",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "client": {
+      "ariaLabel": "Main dashboard",
+      "welcome": "Welcome back!",
+      "currentBalance": "Current Balance",
+      "budgetUsage": "Budget used: {{percent}}%",
+      "budgetUsageAriaLabel": "{{percent}} percent of budget used",
+      "monthlyBudget": "Out of {{amount}} € monthly budget",
+      "upcomingPayments": "Upcoming Payments",
+      "noUpcomingPayments": "No upcoming payments",
+      "recentTransactions": "Recent Transactions",
+      "noTransactions": "No transactions yet"
+    }
+  },
+  "categories": {
+    "income_sozialamt": "Social Welfare Benefits",
+    "income_pension": "Pension",
+    "income_disability_benefit": "Disability Benefit",
+    "income_work": "Work Income",
+    "income_other": "Other Income",
+    "expense_housing": "Housing/Rent",
+    "expense_food": "Food",
+    "expense_transport": "Transport",
+    "expense_health": "Health",
+    "expense_utilities": "Utilities",
+    "expense_insurance": "Insurance",
+    "expense_clothing": "Clothing",
+    "expense_personal_care": "Personal Care",
+    "expense_communication": "Communication",
+    "expense_recreation": "Recreation",
+    "expense_other": "Other"
+  },
+  "transactions": {
+    "add": "Add Transaction",
+    "addIncome": "Add Income",
+    "addExpense": "Add Expense",
+    "amount": "Amount",
+    "category": "Category",
+    "date": "Date",
+    "description": "Description",
+    "optional": "optional",
+    "attachReceipt": "Attach Receipt",
+    "addFile": "Add File",
+    "cancel": "Cancel",
+    "save": "Save",
+    "required": "Required field",
+    "sozialamtRelevant": "Relevant for social services"
+  },
+  "accessibility": {
+    "settings": "Accessibility Settings",
+    "highContrast": "High Contrast",
+    "largeText": "Large Text",
+    "screenReader": "Screen Reader Optimized",
+    "reducedMotion": "Reduced Motion",
+    "simpleMode": "Simple Mode",
+    "voiceControl": "Voice Control",
+    "colorScheme": "Color Scheme",
+    "light": "Light",
+    "dark": "Dark",
+    "highContrastMode": "High Contrast",
+    "fontSize": "Font Size"
+  },
+  "common": {
+    "close": "Close",
+    "open": "Open",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  }
+}
