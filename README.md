@@ -1,248 +1,59 @@
-# BudgetAssist
+# BudgetAssist (`data4` / Soz)
 
-> Barrierefreies Budgetmanagement für Menschen mit Behinderung in Deutschland
+Система управления персональным бюджетом для людей с инвалидностью в Германии с поддержкой требований доступности (WCAG 2.1 Level AA) и отчётностью для социальных служб (Sozialamt).
 
-Система управления персональным бюджетом для людей с инвалидностью в Германии с интеграцией социальных служб.
+> [!NOTE]
+> В ветке `main` в данный момент находятся только файл лицензии `LICENSE` и этот `README.md`. Полный исходный код приложения, серверная часть, Docker-конфигурация и проектная документация размещены в неслитой ветке [`claude/budget-app-accessibility-HisIP`](../../tree/claude/budget-app-accessibility-HisIP).
 
-## Особенности
+## Структура проекта (ветка `claude/budget-app-accessibility-HisIP`)
 
-### Доступность (WCAG 2.1 Level AA)
-- ✅ Полная поддержка screen readers (NVDA, JAWS)
-- ✅ Клавиатурная навигация
-- ✅ Высокая контрастность (настраиваемая)
-- ✅ Масштабирование текста до 200%
-- ✅ Голосовой ввод/вывод
-- ✅ Упрощенный режим
-- ✅ Светлая/темная тема
+| Путь | Назначение |
+|---|---|
+| `src/` | Фронтенд на React 18 + TypeScript: `App.tsx`, `main.tsx`, `components/` (`SkipLinks`, `Dashboard/ClientDashboard`), `config/` (темы), `i18n/`, `models/types.ts`, `styles/`, `utils/` (утилиты доступности) |
+| `server/` | Бэкенд на Node.js + Express: `index.js` (маршрут `/api/health` и базовые заглушки `/api/users`, `/api/transactions`, `/api/budgets`, `/api/reports`), `database/` (SQL-схема) |
+| `docs/` | Документация: `technical/TECHNICAL_SPECIFICATION.md`, `design/`, `user/` |
+| `docker-compose.yml` | Оркестрация контейнеров PostgreSQL 14, Redis 6, API (порт `5000`) и Frontend (порт `3000`) |
+| `package.json`, `vite.config.ts`, `tsconfig.json`, `.env.example` | Конфигурация сборки Vite, TypeScript и переменных окружения |
 
-### Функциональность
-- 📊 Учет доходов и расходов
-- 💰 Планирование бюджета
-- 📄 Генерация отчетов для Sozialamt
-- 👥 Многопользовательский доступ (клиенты, социальные работники, педагоги)
-- 🔐 GDPR compliance
-- 🌍 Многоязычность (Deutsch, Русский, English)
-- 📱 Responsive дизайн
+> На текущем этапе в `src/App.tsx` настроен основной маршрут `/` с демонстрационными моковыми данными, системным определением настроек доступности и мультиязычностью (`i18next`).
 
-## Структура проекта
+## Стек и команды запуска (ветка `claude/budget-app-accessibility-HisIP`)
 
-```
-budgetassist/
-├── docs/                    # Документация
-│   ├── technical/          # Техническая документация
-│   ├── design/             # Дизайн-документы
-│   └── user/               # Пользовательская документация
-├── src/                    # Frontend (React + TypeScript)
-│   ├── components/         # React компоненты
-│   ├── services/           # API сервисы
-│   ├── models/             # TypeScript типы
-│   ├── utils/              # Утилиты (включая accessibility)
-│   ├── config/             # Конфигурация (темы)
-│   └── i18n/               # Переводы
-├── server/                 # Backend (Node.js + Express)
-│   ├── database/           # SQL схемы
-│   ├── routes/             # API routes
-│   ├── controllers/        # Business logic
-│   └── middleware/         # Express middleware
-├── tests/                  # Тесты
-├── public/                 # Статические файлы
-└── scripts/                # Скрипты для развертывания
+- **Frontend:** React 18, TypeScript, Vite 5, Material-UI (`@mui/material`), React Aria (`react-aria`), Redux Toolkit, `react-router-dom`, `i18next`, Recharts, Axios.
+- **Backend и БД:** Node.js, Express, PostgreSQL (`pg`), Redis (в `docker-compose.yml`), JWT, `bcrypt`, `helmet`, `joi`, `winston`.
+- **Тестирование и качество кода:** Vitest, Testing Library, `@axe-core/react`, `jest-axe`, Playwright, ESLint (`eslint-plugin-jsx-a11y`), Prettier.
 
-```
-
-## Технологический стек
-
-**Frontend:**
-- React 18 с TypeScript
-- Material-UI с accessibility
-- React Aria
-- Redux Toolkit
-- i18next
-
-**Backend:**
-- Node.js + Express
-- PostgreSQL
-- Redis
-
-**DevOps:**
-- Docker & Docker Compose
-- GitHub Actions (CI/CD)
-
-## Быстрый старт
-
-### Требования
-- Node.js 18+
-- Docker и Docker Compose
-- PostgreSQL 14+ (или через Docker)
-
-### Установка
-
-1. Клонирование репозитория:
 ```bash
-git clone <repository-url>
-cd budgetassist
-```
-
-2. Установка зависимостей:
-```bash
+# Установка зависимостей
 npm install
-```
 
-3. Настройка окружения:
-```bash
+# Настройка окружения
 cp .env.example .env
-# Отредактируйте .env с вашими настройками
-```
 
-4. Запуск с Docker:
-```bash
-docker-compose up -d
-```
-
-5. Запуск базы данных:
-```bash
-docker-compose up postgres redis -d
-```
-
-6. Инициализация БД:
-```bash
-npm run db:init
-```
-
-7. Запуск приложения:
-```bash
-# Frontend (dev server)
+# Запуск frontend (Vite) и backend (Express)
 npm run dev
+npm run server:dev        # или npm run server
 
-# Backend
-npm run server:dev
+# Сборка и предпросмотр
+npm run build
+npm run preview
+
+# Проверки и тесты
+npm test                  # vitest
+npm run test:e2e          # playwright test
+npm run test:a11y         # jest --config jest.a11y.config.js
+npm run lint
+npm run format
 ```
 
-Приложение будет доступно по адресу: http://localhost:3000
+Для поднятия БД и сервисов также присутствует `docker-compose.yml` (`docker-compose up -d`; обратите внимание, что указанные в нём `Dockerfile.server` и `Dockerfile.frontend` в текущей ревизии ветки отсутствуют).
 
-## Разработка
+## Ветки репозитория
 
-### Команды
-
-```bash
-# Разработка
-npm run dev                 # Запуск frontend dev server
-npm run server:dev          # Запуск backend с nodemon
-
-# Сборка
-npm run build               # Сборка production версии
-
-# Тестирование
-npm test                    # Unit тесты
-npm run test:e2e            # E2E тесты
-npm run test:a11y           # Accessibility тесты
-
-# Линтинг
-npm run lint                # ESLint проверка
-npm run format              # Prettier форматирование
-
-# Docker
-docker-compose up           # Запуск всех сервисов
-docker-compose down         # Остановка всех сервисов
-```
-
-### Accessibility Testing
-
-Проект использует несколько инструментов для проверки доступности:
-
-```bash
-# Автоматические тесты доступности
-npm run test:a11y
-
-# Ручное тестирование с axe DevTools
-# (установите расширение для Chrome/Firefox)
-```
-
-## Документация
-
-- [Техническая спецификация](docs/technical/TECHNICAL_SPECIFICATION.md)
-- [Дизайн-документ](docs/design/DESIGN_DOCUMENT.md)
-- [Руководство пользователя](docs/user/USER_GUIDE_DE.md) (на немецком)
-- [API Documentation](docs/technical/API.md)
-
-## Роли пользователей
-
-### Клиент (Client)
-Человек с инвалидностью, основной пользователь системы.
-
-**Возможности:**
-- Просмотр баланса и транзакций
-- Добавление доходов/расходов
-- Просмотр бюджета
-- Загрузка документов
-
-### Социальный работник (Social Worker)
-Помощь в управлении бюджетом клиента.
-
-**Возможности:**
-- Все возможности клиента
-- Управление несколькими клиентами
-- Создание отчетов для Sozialamt
-- Доступ к финансовой истории
-
-### Социальный педагог (Social Pedagogue)
-Образовательная поддержка в финансовой грамотности.
-
-**Возможности:**
-- Просмотр данных клиентов
-- Обучающие материалы
-- Статистика и аналитика
-
-### Представитель Sozialamt
-Просмотр отчетов (только чтение).
-
-**Возможности:**
-- Просмотр отчетов
-- Экспорт данных
-- Верификация выплат
-
-## Безопасность и GDPR
-
-Приложение полностью соответствует требованиям GDPR:
-
-- ✅ Шифрование персональных данных
-- ✅ Право на удаление данных (Article 17)
-- ✅ Право на портируемость данных (Article 20)
-- ✅ Audit logging
-- ✅ Согласие на обработку данных
-- ✅ Data retention policies
-
-## Вклад в проект
-
-Мы приветствуем вклад в развитие проекта!
-
-1. Fork проекта
-2. Создайте feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit изменения (`git commit -m 'Add amazing feature'`)
-4. Push в branch (`git push origin feature/amazing-feature`)
-5. Откройте Pull Request
-
-### Важно для контрибьюторов:
-- Следуйте WCAG 2.1 Level AA guidelines
-- Добавляйте accessibility тесты
-- Документируйте изменения
+- `claude/budget-app-accessibility-HisIP` — основная неслитая ветка с кодом **BudgetAssist** (React + TypeScript фронтенд, Express API, `docker-compose.yml`, документация в `docs/`).
+- `codex/readme-overview-20261118` ([PR #1](../../pull/1), draft) — краткий обзорный `README.md` для ветки `main`.
 
 ## Лицензия
 
-MIT License - see [LICENSE](LICENSE) file for details
-
-## Поддержка
-
-Для вопросов и поддержки:
-- 📧 Email: support@budgetassist.example
-- 📖 Documentation: [docs/](docs/)
-- 🐛 Bug Reports: GitHub Issues
-
-## Благодарности
-
-Проект разработан с учетом потребностей людей с инвалидностью и при поддержке социальных организаций Германии.
-
----
-
-**Version:** 1.0.0
-**Last Updated:** 2025-12-28
+- В ветке `main` размещён файл `LICENSE` (**GNU Affero General Public License v3.0 / AGPL-3.0**).
+- В ветке `claude/budget-app-accessibility-HisIP` (`package.json` и её `README.md`) указана лицензия **MIT**.
